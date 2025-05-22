@@ -1,0 +1,11 @@
+[phases.setup]
+nixPkgs = ["nodejs-18.x", "postgresql"]
+
+[phases.build]
+commands = [
+  "cd backend && npm install",
+  "cd ../frontend && npm install && npm run build"
+]
+
+[start]
+command = "cd backend && npm start"
